@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Independence Day Countdown</title>
+</head>
+<body>
+
+    <h1 id="countdown" style="text-align: center;"></h1>
+    <h2 id="independenceDayMessage" style="text-align: center; display: none;">Happy Independence Day!</h2>
+
+    <script>
+        // Countdown function without a name
+        (function countdown(i) {
+            document.getElementById('countdown').textContent = i;
+
+            if (i > 0) {
+                setTimeout(() => {
+                    countdown(i - 1);
+                }, 1000);
+            } else {
+                document.getElementById('countdown').style.display = 'none';
+                document.getElementById('independenceDayMessage').style.display = 'block';
+            }
+        })(10);
+    </script>
+
+</body>
+</html>
